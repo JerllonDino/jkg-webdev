@@ -59,14 +59,33 @@
       background: rgba(0,0,0,0);
     }
     .bg-dark-gradient {
+      
+    }
+    #grunge {
+      background: url('img/bg.jpg');
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+    #gradient {
       /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231 */
       background: #45484d; /* Old browsers */
       background: -moz-radial-gradient(top, #45484d 0%, #000000 100%); /* FF3.6-15 */
       background: -webkit-radial-gradient(top, #45484d 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
       background: radial-gradient(to bottom, #45484d 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+      position: absolute;
+       top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      opacity: 0.8;
     }
-    
+
     #about,
     #contact {
       height: 100vh;
@@ -152,9 +171,14 @@ background: #d8a409
     </div>
   </nav>
 
+   <div id="gradient"></div>
+   <div id="grunge"></div>
+
   <!-- Masthead -->
-  <header class="masthead bg-dark-gradient text-white text-center mt-0">
+  <header class="masthead bg-dark-gradient text-white text-center mt-0" style="position: relative;z-index: 3">
     <div class="container d-flex align-items-center flex-column" >
+
+     
 
       <!-- Masthead Avatar Image -->
       <img class="masthead-avatar mb-1" src="img/JKG6.png" alt="">
