@@ -87,6 +87,14 @@
     }
 
     #about,
+    #contact,
+    #portfolio {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    #about,
     #contact {
       height: 100vh;
     }
@@ -137,6 +145,50 @@ background: #d8a409
     line-height: 3rem;
     color: #efbb22;
 }
+
+
+
+.arrow {
+      box-sizing: border-box;
+      height: 1vw;
+      width: 1vw;
+      border-style: solid;
+      border-color: white;
+      border-width: 0px 1.5px 1.5px 0px;
+      transform: rotate(45deg);
+    }
+
+    .first {
+      animation: first 0.8s infinite;
+    }
+
+    .second {
+      animation: first 0.9s infinite;
+    }
+
+    .third {
+      animation: first 1s infinite;
+    }
+
+    @keyframes first {
+      to {
+        border-color: #efbb22;
+      }
+    }
+    @keyframes second {
+      to {
+        border-color: #9b4ac9;
+      }
+    }
+    @keyframes third {
+      to {
+        border-color: #f16727;
+      }
+    }
+
+    #scrollDown {
+      cursor: pointer;
+    }
   </style>
 
 </head>
@@ -147,7 +199,8 @@ background: #d8a409
   <nav class="navbar navbar-expand-lg bg-transparent text-uppercase fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <img src="img/JKG6.png" class="img-fluid" style="width: 50px;height:50px;display: none;" id="navLogo">
+        <img src="img/JKG6.png" class="img-fluid" style="width: 50px;height:50px;display: none;-webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);;" id="navLogo">
       </a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
@@ -181,7 +234,7 @@ background: #d8a409
      
 
       <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-1" src="img/JKG6.png" alt="">
+      <img class="masthead-avatar mb-0" src="img/JKG6.png" alt="">
 
       <!-- Masthead Heading -->
       <h3 class="display-5 text-uppercase mb-0"><span class="text-first">#WEDESIGN</span><span class="text-second">#WECREATE</span></h3>
@@ -189,6 +242,14 @@ background: #d8a409
       <!-- Masthead Subheading -->
       <h6 class=" font-weight-light mb-0">Web Design and Development</h6>
 
+      <div class="mt-5">
+        
+        <a class="js-scroll-trigger" id="scrollDown" href="#portfolio">
+          <div class="arrow first"></div>
+          <div class="arrow second"></div>
+          <div class="arrow third"></div>
+        </a>
+      </div>
 
     </div>
   </header>
@@ -213,6 +274,7 @@ background: #d8a409
         <!-- Portfolio Grid Items -->
         <div class="row">
           <div class="col-lg-10 col-md-12 mx-auto">
+            
             <div class="card-deck" id="port">
               <div class="card card-lg p-5 text-center bg-first text-light border-0" data-toggle="modal" data-target="#portfolioModal1">
                 <div class="card-body">
@@ -577,9 +639,13 @@ background: #d8a409
 
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
+  <!-- <script type="text/javascript" src="js/particles.min.js"></script> -->
   <script type="text/javascript">
     $(document).ready(function() {
-     
+      
+      // $('#scrollDown').on('click',function() {
+      //   $('a[href="#portfolio"]').trigger('click');
+      // });
 
       $('#port .card').on('mouseover', function() {
         $(this).find('h1, p').addClass('hoveredCard');
